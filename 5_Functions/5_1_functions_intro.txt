@@ -1,0 +1,97 @@
+# ============================================================
+# Lesson 5.1 - Introduction to Functions
+# ============================================================
+# A FUNCTION is a reusable block of code that has a name.
+# You write the code once, then CALL it whenever you need it.
+#
+# Key word: def
+#   - "def" tells Python you are DEFINING a new function.
+#   - After the name you put () and then a colon :
+#   - Everything INDENTED underneath belongs to the function.
+#
+# To RUN a function, write its name followed by ()
+# ============================================================
+
+
+# ============================================================
+# PART 1: Your First Function
+# ============================================================
+# Let's define a function called say_hello.
+# It prints a greeting when called.
+
+# def say_hello():
+#     print("Hello!")
+
+# Nothing printed yet — we only DEFINED the function above.
+# Now let's CALL it:
+
+# say_hello()    # → Hello!
+# say_hello()    # → Hello!   (we can call it as many times as we want!)
+
+
+# ============================================================
+# PART 2: A Function That Prints Multiple Lines
+# ============================================================
+# Everything indented inside the function runs together.
+
+# def show_banner():
+#     print("============================")
+#     print("   Welcome to Python!       ")
+#     print("============================")
+
+# show_banner()
+# print("")        # blank line between calls
+# show_banner()
+
+
+# ============================================================
+# PART 3: Functions Help You Avoid Repeating Code
+# ============================================================
+# Imagine needing to start three game rounds.
+# WITHOUT a function you would have to retype everything:
+
+# print("=== ROUND 1 ===")
+# print("Get ready...")
+# print("FIGHT!")
+# print("=== ROUND 2 ===")
+# print("Get ready...")
+# print("FIGHT!")
+# ... and so on
+
+# WITH a function it stays clean:
+
+# def start_round():
+#     print("=== NEW ROUND ===")
+#     print("Get ready...")
+#     print("FIGHT!")
+#     print("")
+
+# start_round()
+# start_round()
+# start_round()
+
+
+# ============================================================
+# PART 4: The Order Matters — Define Before You Call
+# ============================================================
+# Python reads your code from TOP to BOTTOM.
+# The def block must appear ABOVE the line that calls it.
+
+# def announce_winner():
+#     print("*** You win! ***")
+
+# announce_winner()   # works — def came first
+
+
+# ============================================================
+# YOUR TURN! Try these challenges:
+# 1. Write a function called print_your_name() that prints
+#    your name three times. Then call it twice.
+# 2. Write a function called show_divider() that prints a line
+#    of dashes: "--------------------". Use it to separate
+#    some other print() statements so your output looks neat.
+# 3. Write a function called launch_rocket() that prints a
+#    countdown from 3 to 0 and then prints "BLAST OFF!".
+#    Call it once to test it. (Hint: use multiple print()
+#    calls inside the function, one for each number.)
+# ============================================================

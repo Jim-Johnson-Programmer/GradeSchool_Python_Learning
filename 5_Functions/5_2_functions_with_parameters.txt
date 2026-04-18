@@ -1,0 +1,88 @@
+# ============================================================
+# Lesson 5.2 - Functions with Parameters
+# ============================================================
+# So far our functions do the same thing EVERY time.
+# PARAMETERS let us send information INTO a function so it
+# can behave differently each time we call it.
+#
+# A parameter is a variable written inside the () of def.
+# When you CALL the function you pass in an actual value —
+# that value is called an ARGUMENT.
+#
+#   def greet(name):       ← 'name' is the parameter
+#       print("Hi " + name)
+#
+#   greet("Eric")          ← "Eric" is the argument
+# ============================================================
+
+
+# ============================================================
+# PART 1: One Parameter
+# ============================================================
+
+# def greet(name):
+#     print("Hello, " + name + "! Welcome to Python.")
+
+# greet("Eric")
+# greet("Jordan")
+# greet("Sam")
+
+
+# ============================================================
+# PART 2: Multiple Parameters
+# ============================================================
+# Separate parameters with commas.
+# Arguments must be passed in the SAME ORDER as the parameters.
+
+# def describe_pet(owner, animal):
+#     print(owner + " has a pet " + animal + ".")
+
+# describe_pet("Eric",   "husky")
+# describe_pet("Jordan", "parrot")
+# describe_pet("Sam",    "turtle")
+
+
+# ============================================================
+# PART 3: Using a Number as a Parameter
+# ============================================================
+# Parameters can hold any type — strings, numbers, etc.
+# Remember: you need str() to join numbers into a string!
+
+# def count_items(player, amount):
+#     print(player + " found " + str(amount) + " diamonds!")
+
+# count_items("Eric",   12)
+# count_items("Jordan", 3)
+
+
+# ============================================================
+# PART 4: Parameters Make Functions Flexible
+# ============================================================
+# Here is a function that builds a short player profile.
+# Notice how the same function creates very different output
+# just by changing the arguments.
+
+# def player_profile(username, level, favorite_block):
+#     print("-----------------------------")
+#     print("Username   : " + username)
+#     print("Level      : " + str(level))
+#     print("Fav Block  : " + favorite_block)
+#     print("-----------------------------")
+
+# player_profile("CreeperSlayer", 42, "TNT")
+# player_profile("DiamondQueen",   7, "Diamond Block")
+# player_profile("GhastHunter",   18, "Obsidian")
+
+
+# ============================================================
+# YOUR TURN! Try these challenges:
+# 1. Write a function called introduce(name, age) that prints
+#    "My name is [name] and I am [age] years old."
+#    Call it for yourself and two friends.
+# 2. Write a function called print_score(player, score) that
+#    prints the player name and score neatly. Then call it
+#    three times with different players.
+# 3. Write a function called show_item(item, quantity) that
+#    prints something like "You have 5 swords in your
+#    inventory." Call it with at least three different items.
+# ============================================================

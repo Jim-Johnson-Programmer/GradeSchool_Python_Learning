@@ -44,8 +44,12 @@ print("Multi-line comments don't stop the code!")
 
 # --- Code runs, comment explains ---
 
-name = "Sam"                    # Store the name "Sam" in a variable
+name = "Eric"                    # Store the name "Sam" in a variable
 print("Hello, " + name + "!")   # Print a greeting using that name
+
+
+integer_variable = 42                   # Store the number 42 in a variable(example is age)
+float_variable = 3.14                   # Store the number 3.14 in a variable (example is money)
 
 age = 10                        # Store the number 10 in a variable called age
 print("I am " + str(age) + " years old.")  # Print the age as part of a sentence
