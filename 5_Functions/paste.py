@@ -1,0 +1,109 @@
+# ============================================================
+# Lesson 5.3 - Return Values
+# ============================================================
+# So far our functions only PRINT things.
+# Sometimes we want a function to CALCULATE something and
+# hand the answer BACK to us so we can use it later.
+#
+# The keyword RETURN sends a value out of the function.
+#
+#   def add(a, b):
+#       return a + b       ← sends the result back
+#
+#   total = add(3, 5)      ← we catch the result in a variable
+#   print(total)           → 8
+#
+# Once Python hits return, the function STOPS immediately.
+# Anything written after return in the same function is skipped.
+# ============================================================
+
+
+# ============================================================
+# PART 1: Basic Return
+# ============================================================
+
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print("3 + 5 =", result)       # → 3 + 5 = 8
+print("10 + 7 =", add(10, 7))  # you can use the function directly in print!
+
+
+# ============================================================
+# PART 2: Returning a String
+# ============================================================
+# Functions can return any type, not just numbers.
+
+# def make_greeting(name):
+#     return "Hello, " + name + "! Nice to meet you."
+
+# message = make_greeting("Eric")
+# print(message)
+
+# print(make_greeting("Jordan"))   # use it directly too!
+
+
+# ============================================================
+# PART 3: Using the Returned Value in Another Calculation
+# ============================================================
+
+# def double(number):
+#     return number * 2
+
+# small  = double(5)
+# big    = double(small)     # pass the return value straight into another call!
+# print("5 doubled is", small)
+# print("doubled again is", big)
+
+
+# ============================================================
+# PART 4: Return vs. Print — What Is the Difference?
+# ============================================================
+# PRINT shows something on the screen but the function forgets it.
+# RETURN sends the value back so you can store it and use it again.
+
+# def shout_print(word):
+#     print(word.upper() + "!!!")     # shows it, but nothing is returned
+
+# def shout_return(word):
+#     return word.upper() + "!!!"    # sends it back so we can use it
+
+# # shout_print gives us nothing to save:
+# shout_print("boom")                # → BOOM!!!
+# saved = shout_print("pow")         # saved is None — nothing came back!
+
+# # shout_return lets us keep the value:
+# loud_word = shout_return("crash")  # loud_word = "CRASH!!!"
+# print(loud_word)                   # → CRASH!!!
+# print(loud_word + " " + loud_word) # → CRASH!!! CRASH!!!
+
+
+# ============================================================
+# PART 5: A More Useful Example — Building a Chat Line
+# ============================================================
+# This function BUILDS a chat message string and returns it.
+# We can then print it, save it, or put it inside a longer string.
+
+# def build_chat_line(sender, message):
+#     return sender + ": " + message
+
+# line1 = build_chat_line("Eric",   "Hey! Are you there?")
+# line2 = build_chat_line("Jordan", "Yeah! What's up?")
+
+# print(line1)
+# print(line2)
+
+
+# ============================================================
+# YOUR TURN! Try these challenges:
+# 1. Write a function called multiply(a, b) that returns
+#    the product of two numbers. Print the result of
+#    multiply(6, 7).
+# 2. Write a function called full_name(first, last) that
+#    returns the two names joined with a space. Store the
+#    result in a variable and print it.
+# 3. Write a function called make_item_label(item, count)
+#    that returns a string like "Swords: 5". Call it for
+#    three different items and print each label.
+# ============================================================

@@ -26,11 +26,11 @@
 # 'material'.  That variable disappears the moment the function ends.
 # Nothing outside the function can see it.
 
-def craft_sword():
-    material = "diamond"                         # local variable
-    print("You crafted a " + material + " sword!")
+# def craft_sword():
+#     material = "diamond"                         # local variable
+#     print("You crafted a " + material + " sword!")
 
-craft_sword()   # → You crafted a diamond sword!
+# craft_sword()    # → You crafted a diamond sword!
 
 # Uncomment the line below and run it to see the error:
 # print(material)   # NameError: name 'material' is not defined
@@ -43,17 +43,17 @@ craft_sword()   # → You crafted a diamond sword!
 # completely separate — like two players each with their own
 # inventory.  Changing one NEVER affects the other.
 
-def nether_score():
-    score = 500                          # local to nether_score
-    print("Nether score:", score)
+# def nether_score():
+#     score = 500                          # local to nether_score
+#     print("Nether score:", score)
 
-def overworld_score():
-    score = 100                          # different variable — same name, different function
-    print("Overworld score:", score)
+# def overworld_score():
+#     score = 100                          # different variable — same name, different function
+#     print("Overworld score:", score)
 
-nether_score()       # → Nether score: 500
-overworld_score()    # → Overworld score: 100
-# Each function has its own private 'score' — they never mix.
+# nether_score()       # → Nether score: 500
+# overworld_score()    # → Overworld score: 100
+# # Each function has its own private 'score' — they never mix.
 
 
 # ============================================================
@@ -66,13 +66,13 @@ overworld_score()    # → Overworld score: 100
 # variable that was passed in — Python gives the function its
 # OWN COPY of the value (like photocopying a treasure map).
 
-def try_to_steal_diamonds(amount):
-    amount = 0       # only changes the LOCAL copy — the original is safe
-    print("Inside the function, amount:", amount)
+# def try_to_steal_diamonds(amount):
+#     amount = 0       # only changes the LOCAL copy — the original is safe
+#     print("Inside the function, amount:", amount)
 
-player_diamonds = 64
-try_to_steal_diamonds(player_diamonds) # → Inside the function, amount: 0
-print("Player still has:", player_diamonds)   # → 64  (unchanged!)
+# player_diamonds = 64
+# try_to_steal_diamonds(player_diamonds)  # → Inside the function, amount: 0
+# print("Player still has:", player_diamonds)   # → 64  (unchanged!)
 
 # Uncomment the lines below to confirm the parameters are gone:
 # print(amount)   # NameError — 'amount' only lived inside the function
@@ -108,52 +108,52 @@ fake_update()
 print("Global high_score unchanged:", high_score)   # → 0
 
 
-# ============================================================
-# PART 5: The 'global' Keyword — Changing a Global Variable
-# ============================================================
-# To MODIFY (not just read) a global variable inside a function,
-# you must declare it with the 'global' keyword first.
-# That tells Python: "I mean the one from outside — not a new local copy."
+# # ============================================================
+# # PART 5: The 'global' Keyword — Changing a Global Variable
+# # ============================================================
+# # To MODIFY (not just read) a global variable inside a function,
+# # you must declare it with the 'global' keyword first.
+# # That tells Python: "I mean the one from outside — not a new local copy."
 
-lives = 3                    # global — tracks how many lives the player has
+# lives = 3                    # global — tracks how many lives the player has
 
-def lose_a_life():
-    global lives             # declare: use the global 'lives', not a new local one
-    lives = lives - 1
-    print("Lives left:", lives)
+# def lose_a_life():
+#     global lives             # declare: use the global 'lives', not a new local one
+#     lives = lives - 1
+#     print("Lives left:", lives)
 
-lose_a_life()    # → Lives left: 2
-lose_a_life()    # → Lives left: 1
-print("Final lives:", lives)   # → Final lives: 1
-
-
-# Accumulating a score across multiple events
-player_score = 0             # global
-
-def collect_diamonds(amount):
-    global player_score
-    player_score = player_score + amount
-    print("Score now:", player_score)
-
-collect_diamonds(10)    # → Score now: 10
-collect_diamonds(25)    # → Score now: 35
-collect_diamonds(5)     # → Score now: 40
+# lose_a_life()    # → Lives left: 2
+# lose_a_life()    # → Lives left: 1
+# print("Final lives:", lives)   # → Final lives: 1
 
 
-# ============================================================
-# PART 5b: The Safer Way — Use return Instead of global
-# ============================================================
-# Most of the time, 'return' is cleaner than 'global'.
-# Pass the value IN, update it, and return it back OUT.
-# Then reassign it outside the function.
+# # Accumulating a score across multiple events
+# player_score = 0             # global
 
-def safer_lose_a_life(current_lives):
-    return current_lives - 1   # return the new value instead of using global
+# def collect_diamonds(amount):
+#     global player_score
+#     player_score = player_score + amount
+#     print("Score now:", player_score)
 
-lives = 3
-lives = safer_lose_a_life(lives)   # assign the returned value back
-lives = safer_lose_a_life(lives)
-print("Final lives (return version):", lives)   # → Final lives (return version): 1
+# collect_diamonds(10)    # → Score now: 10
+# collect_diamonds(25)    # → Score now: 35
+# collect_diamonds(5)     # → Score now: 40
+
+
+# # ============================================================
+# # PART 5b: The Safer Way — Use return Instead of global
+# # ============================================================
+# # Most of the time, 'return' is cleaner than 'global'.
+# # Pass the value IN, update it, and return it back OUT.
+# # Then reassign it outside the function.
+
+# def safer_lose_a_life(current_lives):
+#     return current_lives - 1   # return the new value instead of using global
+
+# lives = 3
+# lives = safer_lose_a_life(lives)   # assign the returned value back
+# lives = safer_lose_a_life(lives)
+# print("Final lives (return version):", lives)   # → Final lives (return version): 1
 
 
 # ============================================================

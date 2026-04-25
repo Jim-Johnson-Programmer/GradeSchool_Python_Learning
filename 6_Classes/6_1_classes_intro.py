@@ -35,7 +35,9 @@ class Dog:
 
 # Now let's CREATE two Dog objects from that blueprint:
 
+#instance/object one
 dog1 = Dog()
+#instance/object two
 dog2 = Dog()
 
 print(dog1)   # → something like <__main__.Dog object at 0x...>
@@ -58,7 +60,7 @@ class Car:
 my_cat = Cat()
 my_car = Car()
 
-print(type(my_cat))   # → <class '__main__.Cat'>
+print(type(my_cat))   # → <class '__main__.Cat'>   type(variable) tells us which blueprint (class) was used to make the object.
 print(type(my_car))   # → <class '__main__.Car'>
 
 # type() tells us which blueprint (class) was used to make the object.
