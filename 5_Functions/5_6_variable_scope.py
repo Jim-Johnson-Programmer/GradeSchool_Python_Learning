@@ -1,85 +1,168 @@
 # ============================================================
-# Lesson 5.6 - Variable Scope
+# Lesson 5.6 - Variable Scope  (Minecraft Edition)
 # ============================================================
+# SCOPE answers one question: WHERE can a variable be seen?
+#
 # A variable created INSIDE a function is called a LOCAL variable.
-# It only exists while the function is running.
+# It only exists while that function is running.
 # Once the function finishes, that variable disappears.
 # Code OUTSIDE the function cannot see or use it.
 #
-# This is called SCOPE — where a variable is visible.
+#   def open_chest():
+#       loot = "diamond sword"    ← local variable
 #
-#   def my_function():
-#       secret = "I only exist inside here"
+#   print(loot)   ← ERROR! 'loot' only existed inside open_chest()
 #
-#   print(secret)   ← ERROR! Python has no idea what 'secret' is
-#
-# Think of a function like a room with no windows.
-# Variables made inside the room stay IN the room.
+# Think of a function like a chest in Minecraft.
+# Items you put inside the chest STAY inside the chest.
+# You can't reach into someone else's chest from outside.
 # ============================================================
 
 
 # ============================================================
-# PART 1: A Local Variable Stays Inside the Function
+# PART 1: Local Variables — They Stay Inside the Function
 # ============================================================
+# When craft_sword() runs, it creates a local variable called
+# 'material'.  That variable disappears the moment the function ends.
+# Nothing outside the function can see it.
 
-def make_message():
-    inside_variable = "Hello from inside the function!"
-    print(inside_variable)   # this works — we are still inside
+def craft_sword():
+    material = "diamond"                         # local variable
+    print("You crafted a " + material + " sword!")
 
-make_message()
+craft_sword()    # → You crafted a diamond sword!
 
 # Uncomment the line below and run it to see the error:
-# print(inside_variable)    # NameError: name 'inside_variable' is not defined
+# print(material)   # NameError: name 'material' is not defined
 
 
 # ============================================================
 # PART 2: Two Functions — Each Has Its OWN Local Variables
 # ============================================================
-# Even if two functions use the same variable NAME, they are
-# completely separate — changing one does NOT affect the other.
+# Even if two functions use the SAME variable name, they are
+# completely separate — like two players each with their own
+# inventory.  Changing one NEVER affects the other.
 
-def function_a():
-    score = 100
-    print("function_a score:", score)
+def nether_score():
+    score = 500                          # local to nether_score
+    print("Nether score:", score)
 
-def function_b():
-    score = 999          # same name, but a DIFFERENT variable
-    print("function_b score:", score)
+def overworld_score():
+    score = 100                          # different variable — same name, different function
+    print("Overworld score:", score)
 
-function_a()
-function_b()
+nether_score()       # → Nether score: 500
+overworld_score()    # → Overworld score: 100
 # Each function has its own private 'score' — they never mix.
 
 
 # ============================================================
-# PART 3: Parameters Are Local Too
+# PART 3: Parameters Are Local Variables Too
 # ============================================================
-# Parameters are really just local variables that get their
+# A parameter is really just a local variable that gets its
 # starting value from what you pass in when you call the function.
+#
+# Changing a parameter inside a function does NOT change the
+# variable that was passed in — Python gives the function its
+# OWN COPY of the value (like photocopying a treasure map).
 
-def double(number):
-    result = number * 2
-    return result
+def try_to_steal_diamonds(amount):
+    amount = 0       # only changes the LOCAL copy — the original is safe
+    print("Inside the function, amount:", amount)
 
-answer = double(7)
-print("Doubled:", answer)
+player_diamonds = 64
+try_to_steal_diamonds(player_diamonds)
+print("Player still has:", player_diamonds)   # → 64  (unchanged!)
 
-# Uncomment the lines below to see that 'number' and 'result'
-# are gone once the function finishes:
-# print(number)    # NameError
-# print(result)    # NameError
+# Uncomment the lines below to confirm the parameters are gone:
+# print(amount)   # NameError — 'amount' only lived inside the function
 
 
 # ============================================================
-# PART 4: Global vs Local — Spot the Difference
+# PART 4: Global Variables — Readable Everywhere
 # ============================================================
 # A variable created OUTSIDE any function is called GLOBAL.
-# It can be read anywhere in the file.
+# Every function in the file can READ a global variable —
+# no special keyword needed.
+#
+# BUT — if you ASSIGN a new value to a name inside a function,
+# Python creates a brand-new LOCAL variable.
+# It does NOT change the global, even if the names match.
 
-player_name = "Eric"     # global variable — created outside all functions
+world_name = "SkyBlock"      # global variable — created outside all functions
 
-def greet_player():
-    print("Welcome,", player_name)   # reading a global is allowed
+def print_world_banner():
+    print("=== Welcome to", world_name, "===")   # reading a global — allowed!
 
-greet_player()
-print("Still available:", player_name)   # global works outside too
+print_world_banner()                  # → === Welcome to SkyBlock ===
+print("Still available:", world_name) # → Still available: SkyBlock
+
+# Watch the trap — assigning inside a function creates a NEW local:
+high_score = 0               # global
+
+def fake_update():
+    high_score = 9999        # NEW local variable — global is untouched!
+    print("Inside fake_update:", high_score)   # → 9999
+
+fake_update()
+print("Global high_score unchanged:", high_score)   # → 0
+
+
+# ============================================================
+# PART 5: The 'global' Keyword — Changing a Global Variable
+# ============================================================
+# To MODIFY (not just read) a global variable inside a function,
+# you must declare it with the 'global' keyword first.
+# That tells Python: "I mean the one from outside — not a new local copy."
+
+lives = 3                    # global — tracks how many lives the player has
+
+def lose_a_life():
+    global lives             # declare: use the global 'lives', not a new local one
+    lives = lives - 1
+    print("Lives left:", lives)
+
+lose_a_life()    # → Lives left: 2
+lose_a_life()    # → Lives left: 1
+print("Final lives:", lives)   # → Final lives: 1
+
+
+# Accumulating a score across multiple events
+player_score = 0             # global
+
+def collect_diamonds(amount):
+    global player_score
+    player_score = player_score + amount
+    print("Score now:", player_score)
+
+collect_diamonds(10)    # → Score now: 10
+collect_diamonds(25)    # → Score now: 35
+collect_diamonds(5)     # → Score now: 40
+
+
+# ============================================================
+# PART 5b: The Safer Way — Use return Instead of global
+# ============================================================
+# Most of the time, 'return' is cleaner than 'global'.
+# Pass the value IN, update it, and return it back OUT.
+# Then reassign it outside the function.
+
+def safer_lose_a_life(current_lives):
+    return current_lives - 1   # return the new value instead of using global
+
+lives = 3
+lives = safer_lose_a_life(lives)   # assign the returned value back
+lives = safer_lose_a_life(lives)
+print("Final lives (return version):", lives)   # → Final lives (return version): 1
+
+
+# ============================================================
+# SCOPE SUMMARY
+# ============================================================
+# | Variable type         | Can read inside function? | Can change inside? | How?            |
+# |-----------------------|---------------------------|---------------------|-----------------|
+# | Local variable        | Yes                       | Yes                 | just assign     |
+# | Parameter             | Yes                       | Yes (local copy only)| just assign    |
+# | Global — reading only | Yes                       | —                   | no keyword      |
+# | Global — modifying    | Yes                       | Yes                 | use 'global'    |
+# ============================================================
