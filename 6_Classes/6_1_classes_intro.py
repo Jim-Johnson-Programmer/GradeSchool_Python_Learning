@@ -1,0 +1,102 @@
+# ============================================================
+# Lesson 6.1 - Introduction to Classes
+# ============================================================
+# So far we have used variables to store single pieces of data
+# and functions to do work.
+#
+# A CLASS bundles BOTH data AND behavior together into one thing.
+# Think of a class as a BLUEPRINT — like the plans for a house.
+# You can build many houses from the same blueprint.
+#
+# Each house built from the blueprint is called an OBJECT
+# (also called an INSTANCE).
+#
+#   class Dog:          ← the blueprint
+#       pass
+#
+#   my_dog = Dog()      ← one object built from the blueprint
+#   your_dog = Dog()    ← another object — completely separate
+#
+# Key words:
+#   class   — starts a class definition
+#   pass    — means "nothing here yet" (placeholder)
+#   ()      — used to CREATE an object from a class
+# ============================================================
+
+
+# ============================================================
+# PART 1: Your First Class
+# ============================================================
+# A class name always starts with a CAPITAL letter.
+# This is a rule Python programmers follow to make code easy to read.
+
+class Dog:
+    pass
+
+# Now let's CREATE two Dog objects from that blueprint:
+
+dog1 = Dog()
+dog2 = Dog()
+
+print(dog1)   # → something like <__main__.Dog object at 0x...>
+print(dog2)   # → a different memory address — they are separate objects
+
+# Both are Dogs, but they are DIFFERENT objects in memory.
+
+
+# ============================================================
+# PART 2: Every Object Knows What Class It Came From
+# ============================================================
+# We can ask Python what type an object is with type()
+
+class Cat:
+    pass
+
+class Car:
+    pass
+
+my_cat = Cat()
+my_car = Car()
+
+print(type(my_cat))   # → <class '__main__.Cat'>
+print(type(my_car))   # → <class '__main__.Car'>
+
+# type() tells us which blueprint (class) was used to make the object.
+
+
+# ============================================================
+# PART 3: isinstance() — Is This Object a Member of a Class?
+# ============================================================
+# isinstance(object, ClassName) returns True or False
+
+print(isinstance(my_cat, Cat))   # → True
+print(isinstance(my_cat, Car))   # → False  (it's a Cat, not a Car!)
+print(isinstance(my_car, Car))   # → True
+
+
+# ============================================================
+# PART 4: One Blueprint, Many Objects
+# ============================================================
+# Let's make a simple Player class and create three players.
+# They all share the same blueprint but are separate objects.
+
+class Player:
+    pass
+
+player1 = Player()
+player2 = Player()
+player3 = Player()
+
+print(type(player1))   # → <class '__main__.Player'>
+print(type(player2))   # → <class '__main__.Player'>
+print(type(player3))   # → <class '__main__.Player'>
+
+# Three separate Player objects — all made from the same class.
+
+
+# ============================================================
+# YOUR TURN! Try these challenges:
+# 1. Create a class called Animal and make three objects from it.
+# 2. Use type() to print the type of each object.
+# 3. Use isinstance() to check that each one is an Animal.
+# ============================================================

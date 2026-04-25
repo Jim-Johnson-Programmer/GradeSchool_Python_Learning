@@ -1,0 +1,136 @@
+# ============================================================
+# Lesson 6.3 - Class Methods
+# ============================================================
+# We know a class can store DATA in member variables.
+# A class can also have FUNCTIONS — called METHODS — that
+# do work using that data.
+#
+# A method is just a function defined INSIDE a class.
+# The only difference: the first parameter is always "self"
+# so the method can access the object's own variables.
+#
+#   class Dog:
+#       def __init__(self, name):
+#           self.name = name
+#
+#       def bark(self):              ← a method
+#           print(self.name, "says: Woof!")
+#
+#   my_dog = Dog("Rex")
+#   my_dog.bark()                   → Rex says: Woof!
+# ============================================================
+
+
+# ============================================================
+# PART 1: Your First Method
+# ============================================================
+
+class Dog:
+    def __init__(self, name, breed):
+        self.name  = name
+        self.breed = breed
+
+    def bark(self):
+        print(self.name + " says: Woof!")
+
+    def describe(self):
+        print(self.name + " is a " + self.breed + ".")
+
+dog1 = Dog("Rex",   "German Shepherd")
+dog2 = Dog("Bella", "Golden Retriever")
+
+dog1.bark()       # → Rex says: Woof!
+dog2.bark()       # → Bella says: Woof!
+
+dog1.describe()   # → Rex is a German Shepherd.
+dog2.describe()   # → Bella is a Golden Retriever.
+
+
+# ============================================================
+# PART 2: Methods Can Change Member Variables
+# ============================================================
+# A method can READ and UPDATE the object's own data.
+
+class Player:
+    def __init__(self, username):
+        self.username = username
+        self.score    = 0          # starts at zero
+
+    def add_points(self, amount):
+        self.score = self.score + amount
+        print(self.username + " now has " + str(self.score) + " points!")
+
+    def reset_score(self):
+        self.score = 0
+        print(self.username + "'s score has been reset.")
+
+p = Player("CreeperSlayer")
+p.add_points(100)    # → CreeperSlayer now has 100 points!
+p.add_points(250)    # → CreeperSlayer now has 350 points!
+p.reset_score()      # → CreeperSlayer's score has been reset.
+p.add_points(50)     # → CreeperSlayer now has 50 points!
+
+
+# ============================================================
+# PART 3: Methods That Return a Value
+# ============================================================
+# Just like regular functions, methods can use return.
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.width  = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+rect = Rectangle(5, 3)
+print("Area      :", rect.area())        # → 15
+print("Perimeter :", rect.perimeter())   # → 16
+
+big_rect = Rectangle(10, 7)
+print("Big area  :", big_rect.area())    # → 70
+
+
+# ============================================================
+# PART 4: Putting It All Together — A Mini Pet Class
+# ============================================================
+
+class Pet:
+    def __init__(self, name, species):
+        self.name    = name
+        self.species = species
+        self.hunger  = 5      # hunger level 0 (full) to 10 (starving)
+
+    def eat(self):
+        if self.hunger > 0:
+            self.hunger = self.hunger - 1
+            print(self.name + " eats. Hunger level: " + str(self.hunger))
+        else:
+            print(self.name + " is already full!")
+
+    def status(self):
+        print("--- " + self.name + " ---")
+        print("Species : " + self.species)
+        print("Hunger  : " + str(self.hunger) + " / 10")
+
+my_pet = Pet("Whiskers", "Cat")
+my_pet.status()
+my_pet.eat()
+my_pet.eat()
+my_pet.status()
+
+
+# ============================================================
+# YOUR TURN! Try these challenges:
+# 1. Add a method called play() to the Pet class that
+#    increases hunger by 1 and prints a message.
+# 2. Create a class called BankAccount with:
+#    - member variable: balance (start at 0)
+#    - method deposit(amount) that adds to balance
+#    - method withdraw(amount) that subtracts from balance
+#    - method show_balance() that prints the current balance
+# ============================================================

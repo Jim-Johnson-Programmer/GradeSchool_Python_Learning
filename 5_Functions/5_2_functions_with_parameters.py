@@ -48,7 +48,7 @@ describe_pet("Sam",    "turtle")
 # Parameters can hold any type — strings, numbers, etc.
 # Remember: you need str() to join numbers into a string!
 
-def count_items(player, amount):
+def count_items(player: str, amount: int):
     print(player + " found " + str(amount) + " diamonds!")
 
 count_items("Eric",   12)
