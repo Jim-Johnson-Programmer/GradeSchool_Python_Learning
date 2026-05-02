@@ -36,11 +36,18 @@ class Creeper:
     def describe(self):
         print(self.name + " has " + str(self.health) + " health points.")
 
+    def explode(self):
+        print(self.name + " explodes! BOOM!")
+        self.health = 0
+
 creeper1 = Creeper("Hissy",  20)
 creeper2 = Creeper("Boomer", 20)
 
 creeper1.hiss()       # → Hissy says: Ssssss!
 creeper2.hiss()       # → Boomer says: Ssssss!
+
+creeper1.explode()    # → Hissy explodes! BOOM!
+creeper2.explode()    # → Boomer explodes! BOOM!
 
 creeper1.describe()   # → Hissy has 20 health points.
 creeper2.describe()   # → Boomer has 20 health points.
