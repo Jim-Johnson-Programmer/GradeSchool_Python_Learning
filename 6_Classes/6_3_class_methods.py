@@ -71,12 +71,12 @@ class MinecraftPlayer:
         self.xp = 0
         print(self.username + "'s XP has been reset.")
 
-p = MinecraftPlayer("CreeperSlayer")
-p.mine("Coal")      # → CreeperSlayer mined Coal! XP: 10
-p.mine("Iron")      # → CreeperSlayer mined Iron! XP: 20
-p.mine("Diamond")   # → CreeperSlayer mined Diamond! XP: 30
-p.reset_xp()        # → CreeperSlayer's XP has been reset.
-p.mine("Gold")      # → CreeperSlayer mined Gold! XP: 10
+player = MinecraftPlayer("CreeperSlayer")
+player.mine("Coal")      # → CreeperSlayer mined Coal! XP: 10
+player.mine("Iron")      # → CreeperSlayer mined Iron! XP: 20
+player.mine("Diamond")   # → CreeperSlayer mined Diamond! XP: 30
+player.reset_xp()        # → CreeperSlayer's XP has been reset.
+player.mine("Gold")      # → CreeperSlayer mined Gold! XP: 10
 
 
 # ============================================================
