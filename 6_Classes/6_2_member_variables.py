@@ -1,5 +1,5 @@
 # ============================================================
-# Lesson 6.2 - Member Variables (Attributes)
+# Lesson 6.2 - Member Variables (Attributes)  (Minecraft Edition)
 # ============================================================
 # In the last lesson we made empty blueprints with "pass".
 # Now we give our objects DATA to hold.
@@ -10,10 +10,10 @@
 # We set them up inside a special function called __init__
 # (pronounced "dunder init" — the double underscores are the clue).
 #
-#   class Dog:
-#       def __init__(self, name, breed):
-#           self.name  = name    ← member variable
-#           self.breed = breed   ← member variable
+#   class Creeper:
+#       def __init__(self, name, health):
+#           self.name   = name    ← member variable
+#           self.health = health  ← member variable
 #
 # __init__ runs automatically the moment you create an object.
 # "self" is Python's way of saying "this specific object".
@@ -25,21 +25,21 @@
 # PART 1: Setting Up Member Variables with __init__
 # ============================================================
 
-class Dog:
-    def __init__(self, name, breed):
-        self.name  = name
-        self.breed = breed
+class Creeper:
+    def __init__(self, name, health):
+        self.name   = name
+        self.health = health
 
-# Create two Dog objects — each gets its own name and breed:
-dog1 = Dog("Rex",   "German Shepherd")
-dog2 = Dog("Bella", "Golden Retriever")
+# Spawn two Creeper objects — each gets its own name and health:
+creeper1 = Creeper("Hissy",  20)   # constructor arguments go here
+creeper2 = Creeper("Boomer", 20)
 
 # Read a member variable using a dot ( . ):
-print(dog1.name)    # → Rex
-print(dog1.breed)   # → German Shepherd
+print(creeper1.name)    # → Hissy
+print(creeper1.health)  # → 20
 
-print(dog2.name)    # → Bella
-print(dog2.breed)   # → Golden Retriever
+print(creeper2.name)    # → Boomer
+print(creeper2.health)  # → 20
 
 
 # ============================================================
@@ -47,13 +47,13 @@ print(dog2.breed)   # → Golden Retriever
 # ============================================================
 # Changing one object does NOT affect the other.
 
-class Player:
+class MinecraftPlayer:
     def __init__(self, username, score):
         self.username = username
         self.score    = score
 
-player1 = Player("CreeperSlayer", 1500)
-player2 = Player("DiamondQueen",   800)
+player1 = MinecraftPlayer("CreeperSlayer", 1500)
+player2 = MinecraftPlayer("DiamondQueen",   800)
 
 print(player1.username, "has", player1.score, "points")
 print(player2.username, "has", player2.score, "points")
@@ -69,17 +69,22 @@ print(player2.username, "still has", player2.score, "points")
 # ============================================================
 # Strings, numbers, booleans — any type works!
 
-class Pet:
-    def __init__(self, name, age, is_friendly):
-        self.name        = name
-        self.age         = age
-        self.is_friendly = is_friendly
+class Mob:
+    def __init__(self, name, health, is_hostile):
+        self.name       = name
+        self.health     = health
+        self.is_hostile = is_hostile
 
-my_pet = Pet("Whiskers", 3, True)
+skeleton = Mob("Skeleton", 20, True)
+cow      = Mob("Cow",      10, False)
 
-print("Name     :", my_pet.name)
-print("Age      :", my_pet.age)
-print("Friendly :", my_pet.is_friendly)
+print("Name     :", skeleton.name)
+print("Health   :", skeleton.health)
+print("Hostile  :", skeleton.is_hostile)
+
+print("Name     :", cow.name)
+print("Health   :", cow.health)
+print("Hostile  :", cow.is_hostile)
 
 
 # ============================================================
@@ -88,23 +93,23 @@ print("Friendly :", my_pet.is_friendly)
 # You can attach a new variable to an object any time using dot notation.
 # (Best practice is to define all variables in __init__, but good to know!)
 
-class Car:
-    def __init__(self, make, model):
-        self.make  = make
-        self.model = model
+class Block:
+    def __init__(self, block_type, is_solid):
+        self.block_type = block_type
+        self.is_solid   = is_solid
 
-my_car = Car("Toyota", "Corolla")
-my_car.color = "blue"       # adding a new attribute after creation
+dirt = Block("Dirt", True)
+dirt.color = "brown"      # adding a new attribute after creation
 
-print(my_car.make)    # → Toyota
-print(my_car.model)   # → Corolla
-print(my_car.color)   # → blue
+print(dirt.block_type)   # → Dirt
+print(dirt.is_solid)     # → True
+print(dirt.color)        # → brown
 
 
 # ============================================================
 # YOUR TURN! Try these challenges:
-# 1. Create a class called Book with member variables:
-#    title, author, and num_pages.
-# 2. Make two Book objects with different data.
-# 3. Print all three variables for each book.
+# 1. Create a class called Sword with member variables:
+#    blade_material, damage, and is_enchanted.
+# 2. Make two Sword objects with different data.
+# 3. Print all three variables for each sword.
 # ============================================================
