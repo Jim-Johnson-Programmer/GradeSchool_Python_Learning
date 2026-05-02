@@ -74,6 +74,8 @@ print(type(skeleton1))   # → <class '__main__.Skeleton'>
 print(isinstance(zombie1,   Zombie))    # → True
 print(isinstance(zombie1,   Skeleton))  # → False  (it's a Zombie, not a Skeleton!)
 print(isinstance(skeleton1, Skeleton))  # → True
+if isinstance(skeleton1, Zombie):
+    print("This will never print because skeleton1 is not a Zombie.")
 
 
 # ============================================================
