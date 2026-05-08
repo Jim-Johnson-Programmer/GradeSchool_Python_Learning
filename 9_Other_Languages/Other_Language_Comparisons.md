@@ -18,20 +18,28 @@ Different programming languages are often chosen based on their strengths for sp
 - Single line: `# comment`
 - Multi-line: `""" comment """`
 
+[W3Schools Python Comments](https://www.w3schools.com/python/python_comments.asp)
+
 ### C++
 
 - Single line: `// comment`
 - Multi-line: `/* comment */`
+
+[W3Schools C++ Comments](https://www.w3schools.com/cpp/cpp_comments.asp)
 
 ### Java
 
 - Single line: `// comment`
 - Multi-line: `/* comment */`
 
+[W3Schools Java Comments](https://www.w3schools.com/java/java_comments.asp)
+
 ### C#
 
 - Single line: `// comment`
 - Multi-line: `/* comment */`
+
+[W3Schools C# Comments](https://www.w3schools.com/cs/cs_comments.php)
 
 ## Data Types
 
@@ -40,6 +48,8 @@ Different programming languages are often chosen based on their strengths for sp
 - Dynamically typed: Types are inferred at runtime.
 - Basic types: `int`, `float`, `str`, `bool`, `list`, `dict`, etc.
 - No fixed sizes; depends on implementation.
+
+[W3Schools Python Data Types](https://www.w3schools.com/python/python_datatypes.asp)
 
 ### C++
 
@@ -52,6 +62,8 @@ Different programming languages are often chosen based on their strengths for sp
   - `double`: 8 bytes (15 decimal digits)
 - Strings: `std::string` (variable size)
 
+[W3Schools C++ Data Types](https://www.w3schools.com/cpp/cpp_data_types.asp)
+
 ### Java
 
 - Statically typed with fixed sizes.
@@ -62,6 +74,8 @@ Different programming languages are often chosen based on their strengths for sp
   - `float`: 4 bytes (6-7 decimal digits)
   - `double`: 8 bytes (15 decimal digits)
 - Reference types: `String`, arrays, objects.
+
+[W3Schools Java Data Types](https://www.w3schools.com/java/java_data_types.asp)
 
 ### C#
 
@@ -74,6 +88,8 @@ Different programming languages are often chosen based on their strengths for sp
   - `double`: 8 bytes (15 decimal digits)
 - Strings: `string` (reference type)
 
+[W3Schools C# Data Types](https://www.w3schools.com/cs/cs_data_types.php)
+
 ## Variables
 
 ### Python
@@ -81,11 +97,15 @@ Different programming languages are often chosen based on their strengths for sp
 - Dynamically typed: No need to declare type explicitly.
 - Example: `x = 5` or `name = "Hello"`
 
+[W3Schools Python Variables](https://www.w3schools.com/python/python_variables.asp)
+
 ### C++
 
 - Statically typed: Must declare type.
 - Example: `int x = 5;` or `std::string name = "Hello";`
 - Supports const: `const int y = 10;`
+
+[W3Schools C++ Variables](https://www.w3schools.com/cpp/cpp_variables.asp)
 
 ### Java
 
@@ -93,11 +113,15 @@ Different programming languages are often chosen based on their strengths for sp
 - Example: `int x = 5;` or `String name = "Hello";`
 - Primitive types and reference types.
 
+[W3Schools Java Variables](https://www.w3schools.com/java/java_variables.asp)
+
 ### C#
 
 - Statically typed: Must declare type.
 - Example: `int x = 5;` or `string name = "Hello";`
 - Supports var for implicit typing: `var x = 5;`
+
+[W3Schools C# Variables](https://www.w3schools.com/cs/cs_variables.php)
 
 ## Functions
 
@@ -112,6 +136,8 @@ def greet(name):
     return f"Hello, {name}!"
 ```
 
+[W3Schools Python Functions](https://www.w3schools.com/python/python_functions.asp)
+
 ### C++
 
 - Must specify return type and parameter types.
@@ -122,6 +148,8 @@ std::string greet(std::string name) {
     return "Hello, " + name + "!";
 }
 ```
+
+[W3Schools C++ Functions](https://www.w3schools.com/cpp/cpp_functions.asp)
 
 ### Java
 
@@ -135,6 +163,8 @@ public String greet(String name) {
 }
 ```
 
+[W3Schools Java Methods](https://www.w3schools.com/java/java_methods.asp)
+
 ### C#
 
 - Must specify return type and parameter types.
@@ -146,6 +176,8 @@ public string Greet(string name) {
     return $"Hello, {name}!";
 }
 ```
+
+[W3Schools C# Methods](https://www.w3schools.com/cs/cs_methods.php)
 
 ## Classes
 
@@ -164,6 +196,8 @@ class Person:
         return f"Hello, I'm {self.name}!"
 ```
 
+[W3Schools Python Classes](https://www.w3schools.com/python/python_classes.asp)
+
 ### C++
 
 - Access modifiers: public, private, protected.
@@ -181,6 +215,8 @@ public:
     }
 };
 ```
+
+[W3Schools C++ Classes](https://www.w3schools.com/cpp/cpp_classes.asp)
 
 ### Java
 
@@ -202,6 +238,8 @@ public class Person {
 }
 ```
 
+[W3Schools Java Classes](https://www.w3schools.com/java/java_classes.asp)
+
 ### C#
 
 - Access modifiers: public, private, protected, internal.
@@ -221,3 +259,5 @@ public class Person {
     }
 }
 ```
+
+[W3Schools C# Classes](https://www.w3schools.com/cs/cs_classes.php)
