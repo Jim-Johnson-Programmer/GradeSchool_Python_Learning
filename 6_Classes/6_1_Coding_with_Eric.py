@@ -3,5 +3,6 @@ class Eric:
         self.name = name
         self.health = health
 
-eric_instance = Eric("Eric the Warrior")
+eric_instance = Eric("Eric the Warrior", 75)
 print(eric_instance.name)  # → Erice the Warrior
+print(eric_instance.health)  # → 75
