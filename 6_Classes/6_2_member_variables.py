@@ -26,7 +26,7 @@
 # ============================================================
 
 class Creeper:
-    def __init__(self, name, health):
+    def __init__(self, name, health): # constructor is a workbench area for building member variables
         self.name   = name
         self.health = health
 
