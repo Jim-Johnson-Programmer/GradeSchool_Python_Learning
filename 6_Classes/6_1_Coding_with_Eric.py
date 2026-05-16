@@ -8,9 +8,17 @@
 # print(eric_instance.health)  # → 75
 
 class Creeper: 
-  def __init__(self, name: str, hp: int): #constructor 
+  def __init__(self, name: str, hp: int): #constructor
     self.name = name 
     self.hp = hp 
     
+  def show_stats(self):
+    print(self.name + " has " + str(self.hp)) # → Eric
+
+
 creeper1 = Creeper("explosion", 10) #Creeper() 
-print(creeper1.name + " has " + str(creeper1.hp)) # → Eric
+creeper1.show_stats() # → explosion has 10 hp
+creeper2 = Creeper("silicon volcano", 20)
+creeper2.show_stats() # → silicon volcano has 20 hp
+
+# print(creeper1.name + " has " + str(creeper1.hp)) # → Eric
