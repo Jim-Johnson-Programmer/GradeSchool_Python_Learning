@@ -43,7 +43,7 @@ describe_pet("Sam",    "turtle")
 
 
 # ============================================================
-# PART 3: Using a Number as a Parameter
+# PART 3: STRONG TYPING: Using a Number as a Parameter
 # ============================================================
 # Parameters can hold any type — strings, numbers, etc.
 # Remember: you need str() to join numbers into a string!
