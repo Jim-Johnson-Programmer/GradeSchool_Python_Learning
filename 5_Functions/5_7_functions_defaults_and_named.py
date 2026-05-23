@@ -17,7 +17,7 @@ def greet(name, greeting="Hello", punctuation="!"):
 greet("Alice")  # Output: Hello, Alice!
 
 # Overriding the default greeting
-greet("Bob", "Hi")  # Output: Hi, Bob!
+greet(greeting="Bob", name="Hi")  # Output: Hi, Bob!
 
 # Overriding all parameters
 greet("Charlie", "Welcome", ".")  # Output: Welcome, Charlie.
