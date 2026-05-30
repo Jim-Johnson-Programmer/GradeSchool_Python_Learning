@@ -1,9 +1,24 @@
-player = {
-    "name":   "Eric",
-    "health": 100,
-    "level":  5,
-    "score":  2400
-}
+# player = {
+#     "name":   "Eric",
+#     "health": 100,
+#     "level":  5,
+#     "score":  2400
+# }
+
+
+
+player = { 
+"name": "Eric", 
+ "health": 100, 
+ "xp_level": 67, 
+ "score": 250000 
+ } 
+
+inventory = { 
+    "sword": 2, 
+    "potion": 100, 
+    "gold": 500
+    }
 
 print(player["name"])     # → Eric
 
