@@ -36,7 +36,7 @@
 # # ============================================================
 # # Index starts at 0 — the FIRST item is index 0.
 # #
-fruits = ["apple", "banana", "cherry"]
+fruits = ["cherry", "apple", "banana"]
 # #   index:       0         1         2
 # first_fruit = fruits[0]   # index 0 is "apple"
 
