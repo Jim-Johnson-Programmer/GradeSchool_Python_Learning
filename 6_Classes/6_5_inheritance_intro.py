@@ -42,7 +42,13 @@ class Mob:
 # Zombie(Mob) means Zombie inherits from Mob.
 # Skeleton(Mob) means Skeleton inherits from Mob.
 
+#inheritance
+#you bring in class, and can use functions and variables
+# from inherited class and from class you are coding now.
 class Zombie(Mob):
+    # 3 functions are here.  
+    # 2 from Mob. take_damage(), describe()  
+    # 1 from Zombie. groan()
     def groan(self):
         print(self.name + " says: Braaaains...")
 

@@ -5,7 +5,7 @@
 # Another file can import this class and use it.
 # ============================================================
 
-
+#class definition for the Minecraft chat game
 class MinecraftChatGame:
     def __init__(self):
         self.player1_name = ""
