@@ -4,6 +4,12 @@
 
 [Series using VS Code from start to making games](https://www.youtube.com/watch?v=5Qi0JrTrqVQ&list=PLYnuuwG097TxI0viOUfWD7sx_D_wRsGbo)
 
+## Bro Code in Youtube
+
+[Python Full Course for free](https://www.youtube.com/watch?v=XKHEtdqhLK8)
+
+[Python Projects for Beginners](https://www.youtube.com/watch?v=4wGuB3oAKc4)
+
 ## Code With Josh
 
 ### This is the one that Jim used with Eric to learn Python and make games. It is a great series for beginners.
@@ -17,3 +23,5 @@
 https://www.youtube.com/watch?v=DHSRaVeQxIk
 
 https://www.youtube.com/watch?v=OCE2Es_Y5X0
+
+[Flappy Bird Clone in Python and Panda3D](https://www.youtube.com/watch?v=OCE2Es_Y5X0)
