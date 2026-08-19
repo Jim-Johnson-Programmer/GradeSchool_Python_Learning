@@ -20,8 +20,6 @@
 
 [How to Create Minecraft in Python and Panda3D](https://www.youtube.com/watch?v=xV3gH1JZew4)
 
-https://www.youtube.com/watch?v=DHSRaVeQxIk
-
-https://www.youtube.com/watch?v=OCE2Es_Y5X0
+[Minecraft in Ursina](https://www.youtube.com/watch?v=DHSRaVeQxIk)
 
 [Flappy Bird Clone in Python and Panda3D](https://www.youtube.com/watch?v=OCE2Es_Y5X0)
